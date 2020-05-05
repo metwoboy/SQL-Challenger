@@ -9,7 +9,7 @@ from employees emp inner join salaries sal
 on emp.emp_no = sal.emp_no;
 
 --List first name, last name, and hire date for employees who were hired in 1986.
-select first_name,last_name, (to_date(hire_date,'mm/dd/yy'))start_date from employees;
+select first_name,last_name, hire_date from employees where extract(year from hire_date)='1986';
 
 --List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
 
